@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // =============== AUTRES ANIMATIONS (si tu les gardes) ===============
-
+   
     // Effet machine à écrire (si tu l'utilises toujours)
     const textElement = document.getElementById('typing-text');
     if (textElement) {
