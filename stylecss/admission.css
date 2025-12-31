@@ -1,0 +1,156 @@
+.encore{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(6, 6, 105);
+    padding: 55px;
+    color: #fff;
+    gap: 20px;
+  
+ 
+ }
+ .hr1{
+ 
+     border: 2px solid #fff;
+     width: 80px;
+     margin: 0 auto;
+ }
+ 
+ .intro-text {
+     max-width: 800px;
+     font-size: 17px;
+     line-height: 1.7;
+     margin: 0;
+ }
+ .rien1{
+     position: relative;
+     display: flex;
+     gap : 10px ; 
+     margin-top: 80px;
+     margin-left: 20px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     align-items: flex-start;
+ }
+ h3{
+     color: crimson;
+     margin: 0;
+     font-size: 28px;
+ }
+ .contenue2 {
+     max-width: 900px;
+     margin: 50px auto;
+     padding:  40px 20px;
+     font-family: 'Segoe UI', Arial, sans-serif;
+     width: 65%;
+ }
+ 
+ .etape {
+     display: flex;
+     align-items: flex-start;
+     background: white;
+     border-radius: 12px;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+     padding: 30px;
+     margin-bottom: 40px;
+     position: relative;
+     overflow: hidden;
+ }
+ 
+ .etape:last-child {
+     margin-bottom: 0;
+ }
+ 
+ 
+ .etape::before {
+     content: attr(data-numero);
+     width: 60px;
+     height: 60px;
+     background-color: #a31f34;
+     color: white;
+     font-size: 24px;
+     font-weight: bold;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-shrink: 0;
+     margin-right: 25px;
+ }
+ 
+ .etape .texte {
+     flex: 1;
+ }
+ 
+ .etape .etape-titre {
+     color: #a31f34;
+     font-size: 16px;
+     font-weight: 600;
+     text-transform: uppercase;
+     margin: 0 0 8px 0;
+     letter-spacing: 0.5px;
+ }
+ 
+ .etape h4 {
+     color: #333;
+     font-size: 20px;
+     margin: 0 0 15px 0;
+     font-weight: 600;
+ }
+ 
+
+ .etape p {
+     color: #666;
+     line-height: 1.7;
+     font-size: 15px;
+     margin: 0;
+ }
+ 
+ .etape ul {
+     margin: 15px 0 0 20px;
+     color: #666;
+ }
+ 
+ .etape ul li {
+     margin-bottom: 6px;
+ }
+ 
+
+ @media (max-width: 768px) {
+     .etape {
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         padding: 25px;
+     }
+     
+     .etape::before {
+         margin-right: 0;
+         margin-bottom: 20px;
+     }
+ }
+ .header-sticky {
+    position: sticky;
+    top: 20px; /* distance depuis le haut */
+    align-self: flex-start;
+    background: transparent; /* ne change PAS ton fond */
+    max-width: 400px;
+    width: 35%;
+}
+
+.etape {
+    opacity: 0;         
+    transform: translateY(40px);
+    transition: all 0.8s ease-out; 
+}
+
+
+.etape.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.etape:nth-child(1) { transition-delay: 0.1s; }
+.etape:nth-child(2) { transition-delay: 0.2s; }
+.etape:nth-child(3) { transition-delay: 0.3s; }
+.etape:nth-child(4) { transition-delay: 0.4s; }
+.etape:nth-child(5) { transition-delay: 0.5s; }
+.etape:nth-child(6) { transition-delay: 0.6s; }

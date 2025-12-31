@@ -1,0 +1,252 @@
+.debouchés-container {
+    padding: 100px 20px;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    color: #a31f34;
+    margin: 100px 0 80px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 120px;
+    height: 4px;
+    background: rgb(6, 6, 105);
+    display: block;
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+.filiere-title {
+    font-size: 28px;
+    color: rgb(6, 6, 105);
+    text-align: center;
+    margin: 80px 0 50px;
+    font-weight: 600;
+}
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.job-card {
+    background: white;
+    padding: 50px 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.job-card .icon {
+    color: rgb(6, 6, 105);
+    margin-bottom: 25px;
+    transition: transform 0.3s;
+}
+
+.job-card:hover .icon {
+    transform: scale(1.2);
+}
+
+.job-card h4 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.job-card p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 120px;
+}
+
+.sector-item {
+    background: rgb(6, 6, 105);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 19px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.sector-item:hover {
+    background: #a31f34;
+    transform: scale(1.05);
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 220px;
+}
+
+.stat-item h3 {
+    font-size: 56px;
+    color: #a31f34;
+    margin: 0 0 15px 0;
+    font-weight: 800;
+}
+
+.stat-item p {
+    color: #333;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .section-title { font-size: 32px; }
+    .filiere-title { font-size: 26px; }
+}
+
+@media (max-width: 768px) {
+    .jobs-grid, .sectors-grid { grid-template-columns: 1fr; }
+    .stats { flex-direction: column; align-items: center; gap: 60px; }
+    .stat-item { margin-bottom: 40px; }
+}
+/* SECTION PARTENAIRES */
+.partenaires-section {
+    margin: 120px 0;
+    text-align: center;
+}
+
+.partenaires-subtitle {
+    font-size: 28px;
+    color: #bb3950;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.logo-carousel {
+    overflow: hidden;
+    background: white;
+    padding: 40px 0;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo-track {
+    display: flex;
+    gap: clamp(40px, 8vw, 120px);  /* Gap adaptatif : petit sur mobile, grand sur très grand écran */
+    align-items: center;
+    animation: scrollLeft 30s linear infinite;
+    padding: 0 20px; /* petit padding pour éviter que les logos collent les bords */
+}
+
+.logo-track img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0; /* important : empêche les logos de rétrécir */
+    filter: grayscale(20%);
+    transition: all 0.3s ease;
+}
+
+.logo-track img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Deux animations différentes pour ne pas qu'ils défilent en même temps */
+#entrepriseCarousel .logo-track {
+    gap: clamp(40px, 6vw, 80px);   /* gap plus serré que les écoles */
+    animation: scrollLeft 18s linear infinite;  /* plus rapide : 18s au lieu de 25s ou 30s */
+}
+
+/* Sur très grand écran : encore plus dense et visible */
+@media (min-width: 1400px) {
+    #entrepriseCarousel .logo-track {
+        gap: 70px;
+    }
+    #entrepriseCarousel .logo-track img {
+        height: 95px;
+    }
+}
+
+@media (max-width: 768px) {
+    #entrepriseCarousel .logo-track {
+        gap: 30px;
+    }
+    #entrepriseCarousel .logo-track img {
+        height: 60px;
+    }
+}
+/* Pause au survol */
+.logo-carousel:hover .logo-track {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo-track { gap: 40px; }
+    .logo-track img { height: 60px; }
+    .partenaires-subtitle { font-size: 24px; }
+}
+.typing-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+#typing-text {
+    display: inline;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #fff;
+    white-space: pre-wrap; /* conserve les retours à la ligne */
+}
+
+.cursor {
+    font-size: 24px;
+    color: crimson;
+    animation: blink 0.8s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

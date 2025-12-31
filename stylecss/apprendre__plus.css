@@ -1,0 +1,223 @@
+.together{
+
+    margin-top: 100px ;
+    display: flex ;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 100px ;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-wrap: wrap;
+
+}
+.high{
+
+     border: 1px solid #bb3950;
+     width: 145px;
+}
+.h22 , .para {
+
+ letter-spacing: 1px;
+ font-weight: 700;
+}
+.explore_programme{
+    margin-top: 40px ;
+    margin-top: 40px ;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 40%;
+
+}
+.highs{
+    border: 1px solid #bb3950;
+    width: 145px;
+    margin-bottom: 20px;
+}
+
+
+.togethers{
+    display: flex;
+    gap: 30px;
+}
+
+
+
+.programme-dts {
+    
+}
+
+.stic {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.stic h2 {
+    font-size: 36px;
+    color: rgb(6, 6, 105);
+    margin-bottom: 10px;
+}
+
+.stic h2 span {
+    display: block;
+    font-size: 22px;
+    color: #a31f34;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+.stic h4 {
+    color: #555;
+    font-weight: normal;
+    font-size: 20px;
+}
+.stgi {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.stgi h2 {
+    font-size: 36px;
+    color: rgb(6, 6, 105);
+    margin-bottom: 10px;
+}
+
+.stgi h2 span {
+    display: block;
+    font-size: 22px;
+    color: #a31f34;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+.stgi h4 {
+    color: #555;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.semestre-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+    overflow: hidden;
+}
+
+.semestre-title {
+    background: rgb(6, 6, 105);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 26px;
+    margin: 0;
+}
+
+.matiere-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.matiere-table th {
+    background: #a31f34;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.matiere-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.matiere-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.total {
+    background: rgb(6, 6, 105) !important;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.note {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin: 40px 0;
+    font-size: 17px;
+}
+.matiere-table.simple th,
+.matiere-table.simple td {
+    text-align: left;
+    vertical-align: top;
+}
+
+.matiere-table.simple th {
+    width: 35%;
+}
+
+/* FAQ – 10 questions */
+.faq-accordion {
+    max-width: 1000px;
+    margin: 0 auto 120px;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 22px 30px;
+    background: rgb(6, 6, 105);
+    color: white;
+    text-align: left;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #a31f34;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 28px;
+    font-weight: bold;
+    transition: transform 0.4s ease;
+}
+
+.faq-question.active::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 30px;
+    background: #f9f9f9;
+    transition: max-height 0.6s ease, padding 0.6s ease;
+}
+
+.faq-answer.active {
+    max-height: 500px; /* assez grand pour tout le texte */
+    padding: 30px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #333;
+    line-height: 1.8;
+    font-size: 16px;
+}
