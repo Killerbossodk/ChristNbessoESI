@@ -1,4 +1,3 @@
-
 //pour le nav section en scroll
 
 const nav = document.querySelector(".lien");
@@ -414,3 +413,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(section);
 });
+
+
+

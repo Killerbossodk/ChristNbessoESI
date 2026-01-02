@@ -1399,3 +1399,12 @@ footer {
 a{
     text-decoration: none;
 }
+
+
+@media(min-width : 993px){
+    #mobile-menu-container{
+
+        display: none;
+    }
+   
+}
