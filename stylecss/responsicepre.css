@@ -1,0 +1,713 @@
+
+.header-top {
+    background: #1b2b4a;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-info {
+    display: flex;
+    gap: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-item i {
+    color: #bb3950;
+    font-size: 14px;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #bb3950;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-icon i {
+    color: white;
+    font-size: 16px;
+}
+
+.social-icon.facebook {
+    background: #3b5998;
+}
+
+.social-icon.twitter {
+    background: #1da1f2;
+}
+
+.social-icon.linkedin {
+    background: #0077b5;
+}
+
+.social-icon.youtube {
+    background: #ff0000;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.image-container {
+    width: 100%;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.image-container .main-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #bb3950;
+    margin-bottom: 15px;
+}
+
+.stat-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.stat-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.autre {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.autre .image {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-out;
+}
+
+.autre .image.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.autre .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.section22 {
+    flex: 1;
+}
+
+.hrr {
+    width: 80px;
+    height: 4px;
+    background: #bb3950;
+    margin-bottom: 20px;
+}
+
+.nouvelle h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.apprendre {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* MOT DU DIRECTEUR */
+.mot_du_directeur {
+    padding: 80px 20px;
+    background: #f8f8f8;
+}
+
+.mot_du_directeur .containers {
+    display: flex;
+    gap: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.imageclasse {
+    flex: 0 0 300px;
+}
+
+.imageclasse img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.le_mot {
+    flex: 1;
+}
+
+.le_mot h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #bb3950;
+    margin-bottom: 30px;
+}
+
+.le_mot p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* NOS TALENTS - CAROUSEL */
+.nos-talents {
+    padding: 80px 20px;
+    background: white;
+}
+
+.talents-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.talents-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carrousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carrousel-liste {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carrousel-element {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrousel-element img {
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.carrousel-bouton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(187, 57, 80, 0.9);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.carrousel-bouton:hover {
+    background: #bb3950;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.precedent {
+    left: 20px;
+}
+
+.suivant {
+    right: 20px;
+}
+
+.carrousel-indicateurs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.indicateur {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.indicateur.actif {
+    background: #bb3950;
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* SECTION CHOISIR - VALEURS */
+.choisir {
+    padding: 80px 20px;
+    background: #f8f8f8;
+}
+
+.choisir .container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #bb3950;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.8;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.value-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #bb3950;
+    opacity: 0.2;
+    margin-bottom: 15px;
+}
+
+.value-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.value-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.value-divider {
+    width: 60px;
+    height: 3px;
+    background: #bb3950;
+}
+
+@media screen and (max-width: 992px) {
+   
+    .header-top {
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    /* Stats section */
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 40px 15px;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    /* Section autre */
+    .autre {
+        flex-direction: column;
+        padding: 50px 15px;
+    }
+
+    .autre .image {
+        width: 100%;
+    }
+
+    .nouvelle h1 {
+        font-size: 2rem;
+    }
+
+    .apprendre {
+        font-size: 1rem;
+    }
+
+    /* Mot du directeur */
+    .mot_du_directeur {
+        padding: 60px 15px;
+    }
+
+    .mot_du_directeur .containers {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .imageclasse {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Carousel */
+    .carrousel-element img {
+        height: 400px;
+    }
+
+    .carrousel-bouton {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+
+    .precedent {
+        left: 10px;
+    }
+
+    .suivant {
+        right: 10px;
+    }
+
+    /* Values grid */
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    /* Header bleu */
+    .header-top {
+        padding: 12px;
+    }
+
+    .contact-item {
+        font-size: 0.85rem;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .social-icon i {
+        font-size: 14px;
+    }
+
+    /* Section 1 */
+    .section1 {
+        padding: 30px 15px !important;
+    }
+
+    .apropos h1 {
+        font-size: 1.8rem !important;
+        padding: 0 10px !important;
+    }
+
+    .nav1 p {
+        font-size: 0.95rem !important;
+        padding: 0 10px !important;
+    }
+
+    /* Image container */
+    .image-container {
+        margin: 30px 0;
+    }
+
+    .image-container .main-image {
+        border-radius: 0;
+    }
+
+    /* Stats en colonne unique */
+    .stats-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 15px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-title {
+        font-size: 1rem;
+    }
+
+    /* Section autre */
+    .autre {
+        padding: 40px 15px;
+    }
+
+    .autre .image img {
+        border-radius: 0;
+    }
+
+    .nouvelle h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .apprendre {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .apprendre br {
+        display: none;
+    }
+
+    /* Mot du directeur */
+    .mot_du_directeur {
+        padding: 40px 15px;
+    }
+
+    .imageclasse {
+        max-width: 100%;
+    }
+
+    .imageclasse img {
+        border-radius: 0;
+    }
+
+    .le_mot h2 {
+        font-size: 1.5rem;
+    }
+
+    .le_mot p {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    /* Nos talents */
+    .nos-talents {
+        padding: 50px 15px;
+    }
+
+    .talents-title {
+        font-size: 1.8rem;
+    }
+
+    .talents-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .carrousel-element img {
+        height: 300px;
+        border-radius: 0;
+    }
+
+    .carrousel-bouton {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .precedent {
+        left: 5px;
+    }
+
+    .suivant {
+        right: 5px;
+    }
+
+    /* Section choisir */
+    .choisir {
+        padding: 50px 15px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .values-grid {
+        gap: 20px;
+    }
+
+    .value-card {
+        padding: 30px 20px;
+    }
+
+    .value-number {
+        font-size: 2.5rem;
+    }
+
+    .value-title {
+        font-size: 1.1rem;
+    }
+
+    .value-text {
+        font-size: 0.95rem;
+    }
+}
+/* Forcer l'affichage de l'image en responsive */
+.autre .image {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.autre .image img {
+    display: block !important;
+    width: 100% !important;
+}
+
+/* S'assurer que le header bleu est toujours visible */
+.header-top {
+    display: flex !important;
+    visibility: visible !important;
+}
+
+/* Ajustements pour les petits écrans */
+@media screen and (max-width: 400px) {
+    .apropos h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .nouvelle h1 {
+        font-size: 1.3rem;
+    }
+
+    .carrousel-element img {
+        height: 250px;
+    }
+}

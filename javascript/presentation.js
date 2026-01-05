@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
         machineAEcrire(elementEsi, texteEsiComplet, 70);
     });
 
-    // 2. Texte "Découvrez les étudiants..." (avec tes variables d’origine conservées)
+
     observerElement(elementDecouverte, () => {
-        let i = 0; // variable conservée comme demandé
+        let i = 0; 
         function ecrireTexte() {
             if (i < texteComplet.length) {
                 elementDecouverte.innerHTML = texteComplet.substring(0, i + 1) + '<span class="curseur"></span>';
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ecrireTexte();
     });
 
-    // 3. Texte "Nos principes guident..."
+
     observerElement(elementDescription, () => {
         machineAEcrire(elementDescription, texteDescription, 35);
     });
@@ -194,3 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(imageDiv);
   });
+
+
+  

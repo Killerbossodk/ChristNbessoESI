@@ -8,7 +8,7 @@ body{
     color: #fff; 
     padding: 0;
 }
-/*premier partir */
+
 .ensemble {
     position: relative;
     width: 100%;
@@ -36,14 +36,14 @@ body{
     z-index: 1;
 }
 
-.img1 img {   /*image de fond */ 
+.img1 img {   
     width: 100%;
     height: 100vh;
     object-fit: cover;
     object-position: center;
 }
 
-.navlien {  /*mes lien jusqu'a lien a */
+.navlien {  
     position: relative;
     z-index: 2;
     padding: 20px 50px;
@@ -57,7 +57,7 @@ body{
     padding: 20px 10px;
     transition: all 0.3s ease;
 }
-/* Animation améliorée */
+
 @keyframes stickySlideDown {
     0% {
         transform: translateX(-50%) translateY(-100px);
@@ -110,8 +110,6 @@ body{
 
 }
 
-
-/* Classe pour l'animation de disparition */
 .nouvelle_class.removing {
     animation: stickySlideUp 0.65s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
@@ -214,14 +212,13 @@ body{
     gap: 60px;
 }
 
-/* Chaque carte commence invisible et décalée vers le bas */
+
 .p1, .p2, .p3 {
     opacity: 0;
-    transform: translateY(40px); /* monte légèrement */
+    transform: translateY(40px);
     transition: all 0.9s ease-out;
 }
 
-/* État visible après animation */
 .p1.visible,
 .p2.visible,
 .p3.visible {
@@ -266,7 +263,7 @@ body{
     color: inherit;
 }
 
-/* Ton CSS existant reste inchangé */
+
 .mission_section {
     margin-top: 15%;
     padding: 60px 50px;
@@ -300,16 +297,15 @@ body{
     gap: 15px;
 }
 
-/* Ajouts pour l'animation séquentielle */
+
 .mission_main_image img,
 .mission_side_images img,
 .mission_text {
     opacity: 0;
-    transform: translateY(30px); /* elles montent légèrement */
+    transform: translateY(30px); 
     transition: all 1s ease-out;
 }
 
-/* Classes qui déclenchent l'apparition */
 .mission_main_image.visible img,
 .mission_side_images.visible img,
 .mission_text.visible {
@@ -317,18 +313,18 @@ body{
     transform: translateY(0);
 }
 
-/* Le texte en rouge quand il apparaît */
+
 .mission_text.visible {
     color: #bb3950; /* ton rouge */
 }
 
-/* Bonus : les images ont un léger zoom au chargement */
+
 .mission_images img {
     transition: transform 1.2s ease;
 }
 
 .mission_images img.visible {
-    transform: scale(1.03); /* petit zoom élégant */
+    transform: scale(1.03); 
 }
 
 .mission_images img {
@@ -374,7 +370,7 @@ body{
 
 
 
-/* On force un fond blanc partout pour être sûr */
+
 body {
     background-color: #ffffff !important;
 }
@@ -429,22 +425,21 @@ section_mission {
     display: block;
 }
 
-/* Ajouts pour l'animation (éléments invisibles au départ) */
+
 .image_mission img,
 .texte_mission {
     opacity: 0;
-    transform: translateY(50px); /* monte depuis le bas */
+    transform: translateY(50px); 
     transition: all 1s ease-out;
 }
 
-/* État visible */
 .image_mission.visible img,
 .texte_mission.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Petit zoom élégant sur l'image */
+
 .image_mission img {
     transition: transform 1.4s ease;
 }
@@ -453,7 +448,7 @@ section_mission {
     transform: scale(1.02);
 }
 
-/* Desktop : texte à gauche, image à droite */
+
 @media (min-width: 992px) {
     .contenu_mission {
         flex-wrap: nowrap;
@@ -503,10 +498,10 @@ section_mission {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 0; /* pas d’espace entre image et texte */
+    gap: 0;
   }
   
-  /* Image à gauche – touche vraiment le bord gauche */
+
   .image-gauche {
     width: 50%;
 
@@ -521,7 +516,7 @@ section_mission {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     opacity: 0;
-    transform: translateX(-50px); /* vient de la gauche */
+    transform: translateX(-50px); 
     transition: all 1.2s ease-out;  
 
 }
@@ -531,7 +526,7 @@ section_mission {
     width: 50%;
     padding: 0 8% 0 6%;
     opacity: 0;
-    transform: translateX(50px); /* vient de la droite */
+    transform: translateX(50px); 
     transition: all 1.2s ease-out;
   }
 .image-gauche.visible img,
@@ -686,7 +681,6 @@ section_mission {
     transform: translateY(0);
 }
 
-/* Petit effet zoom sur les images quand la carte apparaît */
 .carte_image {
     transition: transform 1.3s ease;
 }
@@ -757,10 +751,10 @@ a{
     transition: opacity 1s ease;
 }
 
-/* Contenu (logo, texte, bouton) */
+
 .content-overlay {
     position: relative;
-    z-index: 1;                    /* au-dessus du fond */
+    z-index: 1;                 
     max-width: 900px;
     padding: 40px;
     transition: opacity 1s ease;
@@ -799,10 +793,10 @@ a{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 3;                    /* au-dessus de tout */
+    z-index: 3;                   
     opacity: 0;
     transition: opacity 1s ease;
-    pointer-events: none;          /* bloque clics au départ → bouton cliquable */
+    pointer-events: none;          
 }
 
 /* État actif (vidéo lancée) */
@@ -814,10 +808,9 @@ a{
 
 .video-playing .institutional-video {
     opacity: 1;
-    pointer-events: auto;          /* active clics + contrôles */
-}
+    pointer-events: auto;         
 
-/* FORCAGE des contrôles natifs (Chrome, Safari, Edge) */
+}
 .institutional-video::-webkit-media-controls {
     display: block !important;
     opacity: 1 !important;
@@ -897,7 +890,7 @@ a{
 }
 
 .card {
-    flex: 0 0 320px; /* largeur fixe des cartes */
+    flex: 0 0 320px; 
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
@@ -952,15 +945,15 @@ a{
 .insc {
     background-color: #f8f9fa !important;
     min-height: 300px;
-    padding: 40px 20px;      /* espace intérieur */
+    padding: 40px 20px;     
     
     display: flex;
-    justify-content: center; /* centre horizontalement */
-    align-items: center;     /* centre verticalement */
-}
+    justify-content: center;
+    align-items: center;  
+}  
 
 .btn12 {
-    margin: 0; /* on enlève le margin-top inutile */
+    margin: 0;
 }
 
 
@@ -1034,7 +1027,7 @@ a{
   }
   .card {
     flex: 0 0 auto;
-    width: 320px; /* Largeur fixe pour uniformité */
+    width: 320px; 
     background: white;
     border-radius: 12px;
     overflow: hidden;
@@ -1237,7 +1230,7 @@ a{
       display: inline-block;
         font-size: 3.5rem;
         font-weight: bold;
-        min-width: 100px; /* pour éviter les sauts de layout */
+        min-width: 100px; 
         text-align: center;
 }
 .stat h3 {
@@ -1260,24 +1253,24 @@ a{
 }
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* 4 colonnes égales *                        /* ZÉRO espace entre images */
+    grid-template-columns: repeat(4, 1fr);   
                        
-    overflow: hidden;                       /* cache le débordement */
-    margin: 0 auto;                         /* centré si tu veux */
+    overflow: hidden;                     
+    margin: 0 auto;                       
 }
 
 .gallery-grid img {
     width: 100%;
-    height: 460px;                          /* hauteur fixe */
-    object-fit: cover;                      /* remplit sans déformer */
-    display: block;                         /* supprime l'espace blanc par défaut */
+    height: 460px;                       
+    object-fit: cover;                     
+    display: block;                         
     margin: 0;
     padding: 0;
     transition: transform 0.5s ease;
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.1);                  /* zoom propre */
+    transform: scale(1.1);                
 }
 footer {
     background: #221d1d;
@@ -1400,9 +1393,6 @@ a{
     text-decoration: none;
 }
 
-/* ======================================== 
-   MENU BURGER - AJOUT À TON CSS EXISTANT
-======================================== */
 
 /* Icône burger (caché par défaut sur desktop) */
 .burger-menu {
@@ -1531,13 +1521,10 @@ a{
     margin: 0 !important;
 }
 
-/* ======================================== 
-   RÈGLES RESPONSIVE AMÉLIORÉES
-======================================== */
 
-/* TABLETTES ET PETITS ÉCRANS (≤ 992px) */
+
 @media screen and (max-width: 992px) {
-    /* Reset complet des marges et padding du body */
+  
     body {
         margin: 0 !important;
         padding: 0 !important;
@@ -1550,18 +1537,17 @@ a{
         display: flex;
     }
 
-    /* Cacher les menus desktop */
+  
     .lien,
     .nouvelle_class {
         display: none !important;
     }
 
-    /* Cacher la carte desktop */
     .carte {
         display: none !important;
     }
 
-    /* Ajuster la section bienvenue */
+  
     .ensemble {
         min-height: 100vh;
         width: 100% !important;
@@ -1611,7 +1597,7 @@ a{
         width: 100%;
         max-width: 100%;
         font-size: 1rem;
-        margin: 10px 0;
+        margin: 20px 0;
     }
 
     /* Section mission - Espace respirant */
@@ -2463,16 +2449,14 @@ a{
     }
 }
 
-/* ======================================== 
-   CORRECTIONS FINALES Z-INDEX
-======================================== */
 
-/* Menu sticky toujours au-dessus */
+
+
 .nouvelle_class {
     z-index: 99999 !important;
 }
 
-/* Burger en dessous du sticky */
+
 .burger-menu {
     z-index: 10000 !important;
 }
@@ -2485,11 +2469,296 @@ a{
     z-index: 9999 !important;
 }
 
-/* Cacher le burger sur desktop */
+
 @media screen and (min-width: 993px) {
     .burger-menu,
     .menu-overlay,
     .burger-container {
         display: none !important;
     }
+}
+
+
+
+   .burger-header-custom {
+    background-color: #1e2d4d;
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.burger-header-custom .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.burger-header-custom .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.burger-header-custom .contact-item i {
+    font-size: 16px;
+}
+
+.burger-header-custom .contact-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.burger-header-custom .contact-item a:hover {
+    text-decoration: underline;
+}
+
+.burger-header-custom .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.burger-header-custom .social-icon {
+    width: 32px;
+    height: 32px;
+    background: white;
+    color: #1e2d4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.burger-header-custom .social-icon:hover {
+    background: #bb3950;
+    color: white;
+}
+
+
+.burger-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.burger-close:hover {
+    color: #bb3950;
+}
+
+.burger-container {
+    background: white;
+    color: #1e2d4d;
+}
+
+.burger-links a {
+    color: #1e2d4d;
+    padding: 16px 30px;
+    display: block;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+}
+
+.burger-links a:hover {
+    background: #f8f8f8;
+    color: #bb3950;
+    padding-left: 40px;
+    border-left: 4px solid #bb3950;
+}
+@media (max-width: 992px) {
+    .header-top {
+        display: none !important;
+    }
+}
+
+
+   .burger-menu {
+    position: fixed !important;       
+    top: 15px !important;             
+    right: 15px !important;            
+    z-index: 10000 !important;         
+    background: white !important;      
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;     
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important; 
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.burger-menu i {
+    font-size: 24px !important;
+    color: #1e2d4d !important;         
+}
+
+.burger-menu:hover {
+    background: #bb3950 !important;
+    transform: scale(1.1);
+}
+
+.burger-menu:hover i {
+    color: white !important;
+}
+
+.burger-menu.scrolled {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+body {
+    padding-top: 0 !important;
+}
+
+@media (min-width: 993px) {
+    .burger-menu {
+        display: none !important;
+    }
+}
+
+
+   .mobile-sticky-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(187, 57, 80, 0.95); 
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(187, 57, 80, 0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.mobile-sticky-header .logo-left {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-sticky-header .mobile-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.mobile-sticky-header .mobile-burger-btn {
+    background: none;
+     border: none;
+    color: white;
+     font-size: 26px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mobile-sticky-header .mobile-burger-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+.mobile-sticky-header.scrolled {
+background: rgba(187, 57, 80, 1);
+    height: 65px;
+    box-shadow: 0 8px 30px rgba(187, 57, 80, 0.4);
+}
+
+/* Espace pour que le contenu ne soit pas caché sous le header */
+@media (max-width: 992px) {
+    body {
+        padding-top: 80px !important; 
+    }
+    
+    .mobile-sticky-header {
+        display: flex !important;
+    }
+   
+    .header-top {
+        display: none !important;
+    }
+    
+    .burger-menu:not(.mobile-burger-btn) {
+        display: none !important;
+    }
+}
+
+@media (min-width: 993px) {
+    .mobile-sticky-header {
+        display: none !important;
+    }
+    body {
+        padding-top: 0 !important;
+    }
+}
+
+
+.burger-container {
+    background: white;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.burger-links a {
+    display: block;
+    padding: 20px 40px;
+    color: #1e2d4d;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.burger-links a:hover {
+    background: #f9f9f9;
+    color: #bb3950;
+    padding-left: 50px;
+    border-left: 5px solid #bb3950;
+}
+
+.burger-links a img {
+    width: 90px;
+    margin: 40px auto;
+    display: block;
+}
+
+.burger-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #bb3950;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10001;
+    box-shadow: 0 4px 15px rgba(187, 57, 80, 0.4);
+}
+
+.burger-close:hover {
+    transform: scale(1.1);
 }

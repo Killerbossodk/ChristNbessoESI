@@ -167,7 +167,7 @@
     gap: clamp(40px, 8vw, 120px);  /* Gap adaptatif : petit sur mobile, grand sur très grand écran */
     align-items: center;
     animation: scrollLeft 30s linear infinite;
-    padding: 0 20px; /* petit padding pour éviter que les logos collent les bords */
+    padding: 0 20px; 
 }
 
 .logo-track img {
@@ -184,13 +184,11 @@
     transform: scale(1.1);
 }
 
-/* Deux animations différentes pour ne pas qu'ils défilent en même temps */
 #entrepriseCarousel .logo-track {
-    gap: clamp(40px, 6vw, 80px);   /* gap plus serré que les écoles */
-    animation: scrollLeft 18s linear infinite;  /* plus rapide : 18s au lieu de 25s ou 30s */
+    gap: clamp(40px, 6vw, 80px);  
+    animation: scrollLeft 18s linear infinite; 
 }
 
-/* Sur très grand écran : encore plus dense et visible */
 @media (min-width: 1400px) {
     #entrepriseCarousel .logo-track {
         gap: 70px;
@@ -236,7 +234,7 @@
     font-size: 18px;
     line-height: 1.8;
     color: #fff;
-    white-space: pre-wrap; /* conserve les retours à la ligne */
+    white-space: pre-wrap;
 }
 
 .cursor {

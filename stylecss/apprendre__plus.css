@@ -198,7 +198,7 @@
 }
 
 .faq-question.active::after {
-    content: '−';
+    content: '−';  
     transform: rotate(180deg);
 }
 
@@ -211,7 +211,7 @@
 }
 
 .faq-answer.active {
-    max-height: 500px; /* assez grand pour tout le texte */
+    max-height: 500px; 
     padding: 30px;
 }
 

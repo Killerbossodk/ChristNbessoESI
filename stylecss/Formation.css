@@ -9,7 +9,9 @@
 .normal{
 
     position: relative;
+    margin-top: 80px;
 }
+
 
 .ecole{
    background:#1b2b4a ;
@@ -37,7 +39,7 @@ h5{
 }
 .troisiemme {
     padding: 50px 20px;
-    background-color: #f8f8f8; /* ou blanc comme dans l'image */
+    background-color: #f8f8f8; 
     text-align: center;
 }
 
@@ -57,7 +59,7 @@ h5{
 
 .stat-numbers {
     font-size: 48px;
-    color: #bb3950; /* Rouge comme dans l'image */
+    color: #bb3950;
     margin-bottom: 10px;
 }
 
@@ -78,7 +80,7 @@ h5{
     text-transform: none;
     font-style: italic;
 }
-/* Conteneur principal flex (gauche + droite) - tu l'as déjà */
+
 .grides {
     display: flex;
     gap: 25px;
@@ -89,15 +91,15 @@ h5{
 
 
 .programmes {
-    flex: 0 0 320px;                    /* Largeur fixe du menu */
-    position: sticky;                   /* Fixe quand on scroll */
-    top: 100px;                         /* Distance du haut de l'écran quand sticky */
-    align-self: flex-start;             /* Reste en haut du flux */
+    flex: 0 0 320px;                    
+    position: sticky;                   
+    top: 100px;                        
+    align-self: flex-start;             
     background: #ffffff;
     padding: 40px 30px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     border-radius: 10px;
-    height: fit-content;                /* Ne s'étire pas inutilement */
+    height: fit-content;              
 }
 
 .mes_nav {
@@ -167,7 +169,7 @@ font-style: oblique;
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 50px;                  /* Réduit de 80px → 50px : sections plus proches */
+    gap: 50px;                 
 }
 
 /* Barre rouge commune */
@@ -176,7 +178,7 @@ font-style: oblique;
     height: 4px;
     background-color:#bb3950;
     border: none;
-    margin-bottom: 25px;        /* Réduit de 30px → 25px */
+    margin-bottom: 25px;     
 }
 
 /* Titres h2 */
@@ -186,7 +188,7 @@ font-style: oblique;
     font-size: 42px;
     font-weight: bold;
     color: #333;
-    margin: 0 0 30px 0;         /* Réduit de 40px → 30px en bas */
+    margin: 0 0 30px 0;         
     line-height: 1.2;
 }
 
@@ -196,7 +198,7 @@ font-style: oblique;
     line-height: 1.8;
     color: #555;
     text-align: justify;
-    margin-bottom: 30px;        /* Réduit de 40px → 30px */
+    margin-bottom: 30px;       
 }
 
 /* Sections DTS et INGÉNIEUR */
@@ -205,8 +207,8 @@ font-style: oblique;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 800px;                  /* Largeur maximale du bloc texte + image (tu peux ajuster : 700px, 800px, 900px selon tes préférences) */
-    width: 100%;                       /* Prend toute la place disponible jusqu'à la max-width */
+    max-width: 800px;                
+    width: 100%;                      
 }
 .deuxiemme > div:not(.hr):not(.images):not(h2),
 .quartrieme > div:not(.hr):not(.images):not(h2) {
@@ -214,24 +216,24 @@ font-style: oblique;
 }
 .images {
     text-align: center;
-    opacity: 0;                        /* Invisible au chargement */
-    transform: scale(0.95);            /* Légèrement réduite */
+    opacity: 0;                        
+    transform: scale(0.95);            
     transition: opacity 0.8s ease-out, transform 0.9s ease-out;
 }
 .images.visible {
     opacity: 1;
-    transform: scale(1);               /* Taille normale */
+    transform: scale(1);              
 }
 .images img {
-    max-width: 100%;                   /* L'image ne dépasse jamais la largeur du conteneur (donc du texte) */
-    width: 100%;                       /* Force l'image à prendre toute la largeur disponible (comme le texte) */
-    height: auto;                      /* Garde les proportions */              /* Limite toujours la hauteur pour éviter que ce soit trop grand */
+    max-width: 100%;                  
+    width: 100%;                      
+    height: auto;                      
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    object-fit: cover;                 /* Recadre proprement si nécessaire */
+    object-fit: cover;                
 }
 .btn11 {
-    margin-top: 20px;           /* Réduit de 30px → 20px */
+    margin-top: 20px;           
     padding: 14px 32px;
     background-color: #bb3950;
     color: white;
@@ -248,16 +250,14 @@ font-style: oblique;
     background-color: #bb3950;
 }
 
-/* Lignes de séparation hr entre les grandes sections */
 .contenue_principale hr {
     border: none;
     border-top: 1px solid #eee;
-    margin: 40px 0;             /* Réduit de 60px → 40px : beaucoup plus proche */
+    margin: 40px 0;            
 }
 
-/* Section stats - un peu plus compacte aussi */
 .troisiemme {
-    padding: 60px 20px;         /* Réduit de 80px → 60px */
+    padding: 60px 20px;         
     background-color: #f8f8f8;
     text-align: center;
     border-radius: 12px;
@@ -265,9 +265,9 @@ font-style: oblique;
 
 .stats-container {
     justify-content: center;
-    gap: 40px;                  /* Réduit de 60px → 40px pour les stats */
+    gap: 40px;                 
 }
-                  /* Garde les proportions */              /* Limite toujours la hauteur pour éviter que ce soit trop grand */
+                  
 .mes_nav li.active,
 .mes_nav li.active a {
          color: #bb3950 !important;
@@ -297,3 +297,318 @@ font-style: oblique;
 .curseur.hide {
    display: none;
  }
+
+
+
+@media screen and (max-width: 768px) {
+    
+    .ecole {
+        height: 200px;
+    }
+    
+    .ensembles {
+        top: 20%;
+        left: 3%;
+        right: 3%;
+        width: 94%;
+    }
+    
+    .esi_formation h1 {
+        font-size: 24px;
+    }
+    
+    .comprendres {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+  
+    .grides {
+        display: block;
+        padding: 50px 25px;
+        gap: 0;
+    }
+    
+    .programmes {
+        position: static;
+        width: 100%;
+        flex: none;
+        margin-bottom: 50px;
+        padding: 30px 25px;
+    }
+    
+    .mes_nav li {
+        padding: 20px 0;
+        font-size: 13px;
+    }
+    
+    .mes_nav li:first-child {
+        font-size: 16px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .contenue_principale {
+        width: 100%;
+        gap: 50px;
+    }
+    
+    /* Titres */
+    .premier h2,
+    .deuxiemme h2,
+    .quartrieme h2 {
+        font-size: 28px;
+        margin: 0 0 30px 0;
+    }
+    
+    /* Barre rouge */
+    .hr {
+        width: 60px;
+        height: 3px;
+        margin-bottom: 25px;
+    }
+    
+    /* Paragraphes */
+    .contenue_principale p,
+    .deuxiemme > div:not(.hr):not(.images):not(h2),
+    .quartrieme > div:not(.hr):not(.images):not(h2) {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+    
+    /* Sections DTS et INGÉNIEUR */
+    .deuxiemme,
+    .quartrieme {
+        gap: 35px;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    /* Première section */
+    .premiere {
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+    
+    /* Images */
+    .images {
+        margin-top: 35px;
+    }
+    
+    .images img {
+        max-height: 250px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .btn11 {
+        padding: 14px 32px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    
+    
+    .troisiemme {
+        padding: 60px 25px;
+        margin: 30px 0;
+    }
+    
+    .stats-container {
+        display: block;
+        gap: 0;
+    }
+    
+    .stat-item {
+        margin-bottom: 40px;
+        min-width: auto;
+        padding: 15px 0;
+    }
+    
+    .stat-item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .stat-numbers {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+    
+    .stat-label {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    .highlight .stat-numbers {
+        font-size: 32px;
+    }
+    
+    /* Lignes de séparation */
+    .contenue_principale hr {
+        margin: 50px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+   
+    .ecole {
+        height: 180px;
+    }
+    
+    .ensembles {
+        top: 15%;
+        left: 2%;
+        right: 2%;
+        width: 96%;
+    }
+    
+    .esi_formation h1 {
+        font-size: 20px;
+    }
+    
+    .comprendres {
+        font-size: 13px;
+    }
+    
+    .grides {
+        padding: 40px 20px;
+    }
+    
+
+    .programmes {
+        padding: 25px 20px;
+        margin-bottom: 40px;
+    }
+    
+    .mes_nav li {
+        padding: 18px 0;
+        font-size: 12px;
+    }
+    
+    .mes_nav li:first-child {
+        font-size: 14px;
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+    }
+    
+    /* Contenu principal */
+    .contenue_principale {
+        gap: 40px;
+    }
+    
+    /* Titres */
+    .premier h2,
+    .deuxiemme h2,
+    .quartrieme h2 {
+        font-size: 22px;
+        margin: 0 0 25px 0;
+    }
+    
+    /* Barre rouge */
+    .hr {
+        width: 50px;
+        height: 3px;
+        margin-bottom: 20px;
+    }
+    
+    /* Paragraphes */
+    .contenue_principale p,
+    .deuxiemme > div:not(.hr):not(.images):not(h2),
+    .quartrieme > div:not(.hr):not(.images):not(h2) {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+    
+    /* Sections DTS et INGÉNIEUR */
+    .deuxiemme,
+    .quartrieme {
+        gap: 30px;
+        padding: 0 8px;
+    }
+    
+    /* Première section */
+    .premiere {
+        padding: 0 8px;
+        margin-bottom: 15px;
+    }
+    
+    /* Images */
+    .images {
+        margin-top: 30px;
+    }
+    
+    .images img {
+        max-height: 200px;
+        border-radius: 6px;
+        margin-bottom: 12px;
+    }
+    
+    .btn11 {
+        padding: 12px 28px;
+        font-size: 14px;
+        margin-top: 18px;
+        width: 100%;
+    }
+    
+    /* Stats */
+    .troisiemme {
+        padding: 50px 20px;
+        margin: 25px 0;
+    }
+    
+    .stat-item {
+        margin-bottom: 35px;
+        padding: 12px 0;
+    }
+    
+    .stat-numbers {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+    
+    .stat-label {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .highlight .stat-numbers {
+        font-size: 28px;
+    }
+    
+    /* Lignes de séparation */
+    .contenue_principale hr {
+        margin: 40px 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    
+    .esi_formation h1 {
+        font-size: 18px;
+    }
+    
+    .comprendres {
+        font-size: 12px;
+    }
+    
+    .premier h2,
+    .deuxiemme h2,
+    .quartrieme h2 {
+        font-size: 20px;
+    }
+    
+    .contenue_principale p,
+    .deuxiemme > div:not(.hr):not(.images):not(h2),
+    .quartrieme > div:not(.hr):not(.images):not(h2) {
+        font-size: 13px;
+    }
+    
+    .stat-numbers {
+        font-size: 28px;
+    }
+    
+    .stat-label {
+        font-size: 12px;
+    }
+}

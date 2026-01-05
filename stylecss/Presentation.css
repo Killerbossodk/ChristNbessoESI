@@ -155,7 +155,7 @@ margin: 0;
         4px 0 12px rgba(201, 63, 85, 0.15);
 }
 
-/* Overlay subtil sur la bande rouge */
+
 .image-container::after {
     content: '';
     position: absolute;
@@ -532,12 +532,13 @@ hr{
      }
      
      .image img{
-         height: 400px;
-         object-fit: cover;
+        width: 700¨PX;
+        height: 400px;
+        object-fit: cover;
         display: block;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-        opacity: 0;
+      
         transform: translateX(-50px);
         transition: all 1.2s ease-out;
      }
@@ -554,25 +555,23 @@ hr{
         display: flex;
         gap: 80px;
         align-items: flex-start;
-        min-height: 100vh; /* Permet à la section d'être assez haute */
+        min-height: 100vh; 
     }
 
-    /* Photo avec cadre + effet sticky parfait */
     .imageclasse {
         flex-shrink: 0;
         width: 380px;
         position: sticky;
-        top: 100px;           /* Distance fixe du haut quand on scroll */
+        top: 100px;           
         align-self: flex-start;
-        margin-bottom: 100px; /* Espace pour que ça s'arrête avant la fin */
+        margin-bottom: 100px;
     }
     .le_mot {
         flex: 1;
         min-width: 300px;
-        position: relative; /* ← INDISPENSABLE pour que le ::before soit bien positionné */
-        padding-left: 20px; /* Optionnel : petit décalage pour laisser la place au guillemet */
+        position: relative;
+        padding-left: 20px; 
     }
-
     .le_mot h2 {
         font-size: 2.6rem;
         font-weight: 700;
@@ -693,7 +692,7 @@ hr{
             display: inline-block;
             width: 2px;
             height: 1.2em;
-            background-color: #000; /* adapte à la couleur de ton texte si besoin */
+            background-color: #000;
             margin-left: 2px;
             animation: clignoter 1s infinite;
             vertical-align: middle;
@@ -814,7 +813,7 @@ hr{
         letter-spacing: 1px;
       }
   
-      /* Carrousel - style proche de ton original */
+    
       .carrousel-container {
         position: relative;
         max-width: 1000px;
@@ -890,3 +889,10 @@ hr{
         .carrousel-element img { height: 400px; }
         .carrousel-bouton { width: 45px; height: 45px; font-size: 2rem; }
       }
+
+
+@media (max-width: 992px) {
+    .header-top {
+        display: none !important;
+    }
+}

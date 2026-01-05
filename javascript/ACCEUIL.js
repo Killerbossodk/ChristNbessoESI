@@ -1,13 +1,12 @@
-// ====================
-// MENU BURGER RESPONSIVE
-// ====================
+
 let isMenuOpen = false;
 
+// Fonction pour ouvrir le menu
 function openMenu() {
     const burgerMenu = document.getElementById('burgerMenu');
     const menuOverlay = document.getElementById('menuOverlay');
     const burgerContainer = document.getElementById('burgerContainer');
-    
+
     if (burgerMenu && menuOverlay && burgerContainer) {
         burgerMenu.classList.add('active');
         menuOverlay.classList.add('active');
@@ -17,11 +16,12 @@ function openMenu() {
     }
 }
 
+// Fonction pour fermer le menu
 function closeMenu() {
     const burgerMenu = document.getElementById('burgerMenu');
     const menuOverlay = document.getElementById('menuOverlay');
     const burgerContainer = document.getElementById('burgerContainer');
-    
+
     if (burgerMenu && menuOverlay && burgerContainer) {
         burgerMenu.classList.remove('active');
         menuOverlay.classList.remove('active');
@@ -31,6 +31,7 @@ function closeMenu() {
     }
 }
 
+// Fonction pour toggle (ouvrir/fermer)
 function toggleMenu() {
     if (isMenuOpen) {
         closeMenu();
@@ -39,62 +40,126 @@ function toggleMenu() {
     }
 }
 
-// Créer le menu burger SEULEMENT sur mobile
+function setupBurgerEvents() {
+    const burgerMenu = document.getElementById('mobileBurgerBtn'); // ← Nouveau bouton
+    const menuOverlay = document.getElementById('menuOverlay');
+    const closeBtn = document.querySelector('.burger-close');
+
+    if (burgerMenu) burgerMenu.addEventListener('click', toggleMenu);
+    if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.burger-links a').forEach(link => {
+        link.addEventListener('click', () => setTimeout(closeMenu, 200));
+    });
+}
+
+// Effet scroll sur le header
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.mobile-sticky-header');
+    if (header) {
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+});
 function createBurgerMenu() {
-    // Ne créer que sur mobile
     if (window.innerWidth > 992) return;
-    
-    // Éviter de dupliquer
     if (document.getElementById('burgerMenu')) return;
-    
+
     const lienMenu = document.querySelector('.lien');
     const carteSection = document.querySelector('.carte');
-    
-    let links = lienMenu ? lienMenu.innerHTML : '';
-    let cartes = carteSection ? carteSection.innerHTML : '';
-    
+
+    const links = lienMenu ? lienMenu.innerHTML : '';
+    const cartes = carteSection ? carteSection.innerHTML : '';
+
+    // reconstrution de la barre mannuel
+    const headerCustomHTML = `
+        <div class="burger-header-custom">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="far fa-envelope"></i>
+                    <a href="mailto:esi@inphb.edu.ci">esi@inphb.edu.ci</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+2250747260505">+225 07 47 26 05 05</a>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/inphb.polytech" class="social-icon facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/inphbpolytech" class="social-icon twitter" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://ci.linkedin.com/school/inphb-officiel/" class="social-icon linkedin" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.youtube.com/@inp-hbpageofficielle6975" class="social-icon youtube" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    `;
+
     const burgerHTML = `
         <div class="burger-menu" id="burgerMenu">
             <i class="fas fa-bars"></i>
         </div>
         <div class="menu-overlay" id="menuOverlay"></div>
         <div class="burger-container" id="burgerContainer">
-            <div class="burger-links">${links}</div>
-            <div class="burger-cartes">${cartes}</div>
+            <button class="burger-close" aria-label="Fermer">
+                <i class="fas fa-times"></i>
+            </button>
+            ${headerCustomHTML}
+            <div class="burger-links">
+                ${links}
+            </div>
+            <div class="burger-cartes">
+                ${cartes}
+            </div>
         </div>
     `;
-    
+
     document.body.insertAdjacentHTML('afterbegin', burgerHTML);
-    
-    // Setup des événements
     setupBurgerEvents();
 }
 
-function setupBurgerEvents() {
-    const burgerMenu = document.getElementById('burgerMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const burgerContainer = document.getElementById('burgerContainer');
-    
-    if (burgerMenu) {
-        burgerMenu.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu();
-        });
+// Effet sticky plus prononcé au scroll pour le burger
+window.addEventListener('scroll', () => {
+    const burger = document.getElementById('burgerMenu');
+    if (burger) {
+        if (window.scrollY > 50) {
+            burger.classList.add('scrolled');
+        } else {
+            burger.classList.remove('scrolled');
+        }
     }
-    
-    if (menuOverlay) {
-        menuOverlay.addEventListener('click', closeMenu);
-    }
-    
-    if (burgerContainer) {
-        // Fermer le menu quand on clique sur un lien
-        burgerContainer.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                setTimeout(closeMenu, 200);
-            });
-        });
-    }
-}
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+    createBurgerMenu();
+
+  
+    fixMenuStickyZIndex();
+});
+
+
+window.addEventListener('resize', () => {
+    clearTimeout(window.resizeTimer);
+    window.resizeTimer = setTimeout(() => {
+        if (window.innerWidth <= 992 && !document.getElementById('burgerMenu')) {
+            createBurgerMenu();
+        } else if (window.innerWidth > 992) {
+            closeMenu(); // au cas où le menu serait ouvert
+        }
+    }, 250);
+});
 
 // ====================
 // FORCER LE Z-INDEX ET LA LARGEUR DU MENU STICKY
@@ -111,40 +176,36 @@ function fixMenuStickyZIndex() {
     }
 }
 
-// ====================
-// INITIALISATION
-// ====================
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Créer le menu burger seulement sur mobile
+    
     if (window.innerWidth <= 992) {
         createBurgerMenu();
     }
     
-    // Forcer le z-index du menu sticky
+    
     fixMenuStickyZIndex();
 });
 
-// Gestion du resize
+
 window.addEventListener('resize', () => {
-    // Debounce pour éviter trop d'appels
+   
     clearTimeout(window.resizeTimer);
     window.resizeTimer = setTimeout(() => {
         if (window.innerWidth <= 992 && !document.getElementById('burgerMenu')) {
             createBurgerMenu();
         } else if (window.innerWidth > 992) {
-            // Fermer le menu si on passe en desktop
+          
             closeMenu();
         }
     }, 250);
 });
 
-// Appeler fixMenuStickyZIndex au scroll
+
 window.addEventListener('scroll', fixMenuStickyZIndex);
 window.addEventListener('load', fixMenuStickyZIndex);
 
-// ====================
-// MENU STICKY SCROLL (TON CODE EXISTANT)
-// ====================
+
 const nav = document.querySelector(".lien");
 let isAnimating = false;
 
@@ -156,7 +217,6 @@ if (nav) {
             nav.classList.remove("lien");
             nav.classList.add("nouvelle_class");
             
-            // FORCER LES STYLES ICI
             setTimeout(() => {
                 nav.style.setProperty('z-index', '99999', 'important');
                 nav.style.setProperty('width', '100%', 'important');
@@ -179,9 +239,8 @@ if (nav) {
     });
 }
 
-// ====================
-// CAROUSEL DES CARTES (TON CODE EXISTANT)
-// ====================
+// CAROUSEL DES CARTES 
+
 const track = document.getElementById('track');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
@@ -207,9 +266,8 @@ if (track && prevBtn && nextBtn) {
     checkScroll();
 }
 
-// ====================
-// COMPTEURS ANIMÉS (TON CODE EXISTANT)
-// ====================
+// COMPTEURS ANIMÉS 
+
 document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counter');
     
@@ -251,9 +309,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ====================
-// GESTION DE LA VIDÉO (TON CODE EXISTANT)
-// ====================
+
+// GESTION DE LA VIDEO 
+
 document.addEventListener('DOMContentLoaded', () => {
     const playBtn = document.querySelector('.play-btn');
     const videoSection = document.querySelector('.video-section');
@@ -280,9 +338,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ====================
-// MACHINE À ÉCRIRE PRINCIPALE (TON CODE EXISTANT)
-// ====================
+
+// MACHINE À ÉCRIRE
+
 document.addEventListener('DOMContentLoaded', () => {
     const nomElement = document.querySelector('.nom');
     const sloganElement = document.querySelector('.slogan');
@@ -307,9 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ====================
-// ANIMATIONS DES CARTES (TON CODE EXISTANT)
-// ====================
+// ANIMATIONS DES CARTES
 document.addEventListener('DOMContentLoaded', () => {
     const cartes = document.querySelectorAll('.p1, .p2, .p3');
     
@@ -320,9 +376,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ====================
 // PREMIÈRE SECTION MISSION (TON CODE EXISTANT)
-// ====================
+
 document.addEventListener('DOMContentLoaded', () => {
     const mainImage = document.querySelector('.mission_main_image');
     const sideImages = document.querySelector('.mission_side_images');
@@ -345,9 +400,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ====================
-// SECTION MISSION 2 (TON CODE EXISTANT)
-// ====================
+
+// SECTION MISSION 2 
 document.addEventListener('DOMContentLoaded', () => {
     const imageMission = document.querySelector('.image_mission');
     const texteMission = document.querySelector('.texte_mission');
@@ -378,9 +432,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ====================
-// SECTION SIMPLE ALTERNÉE (TON CODE EXISTANT)
-// ====================
 document.addEventListener('DOMContentLoaded', () => {
     const imageGauche = document.querySelector('.image-gauche');
     const texteDroite = document.querySelector('.texte-droite');
@@ -411,9 +462,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ====================
-// CARTES UNIVERSITAIRES (TON CODE EXISTANT)
-// ====================
+
+// CARTES UNIVERSITAIRES
+
 document.addEventListener('DOMContentLoaded', () => {
     const titre = document.querySelector('.universitaires_titre');
     const cartes = document.querySelectorAll('.cartes');
@@ -453,9 +504,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ====================
-// CAROUSEL ANIMÉ (TON CODE EXISTANT)
-// ====================
+
+// CAROUSEL ANIMÉ 
+
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('track');
     const cards = document.querySelectorAll('.card');
@@ -504,9 +555,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ====================
-// MACHINE À ÉCRIRE TÉMOIGNAGES (TON CODE EXISTANT)
-// ====================
+// MACHINE À ÉCRIRE TÉMOIGNAGES
+
 document.addEventListener('DOMContentLoaded', () => {
     const subtitleText = "COUP DE PROJECTEUR SUR LES ANCIENS ÉLÈVES";
     const titleText = "Ce que disent nos anciens étudiants";
