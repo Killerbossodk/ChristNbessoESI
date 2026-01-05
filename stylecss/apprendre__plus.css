@@ -221,3 +221,80 @@
     line-height: 1.8;
     font-size: 16px;
 }
+
+
+.ingenieur-hero, .technicien-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/ingenieur-bg.jpg') center/cover;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 80px;
+    position: relative;
+}
+
+.technicien-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/technicien-bg.jpg') center/cover;
+}
+
+.encore {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.encore .hr1 {
+    width: 80px;
+    height: 3px;
+    background: white;
+    margin: 0 auto 25px;
+}
+
+.encore .esi_admission {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.encore h5 {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+    .ingenieur-hero, .technicien-hero {
+        height: 280px;
+        margin-top: 70px;
+        padding: 20px 15px;
+    }
+    
+    .encore .esi_admission {
+        font-size: 32px;
+    }
+    
+    .encore h5 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ingenieur-hero, .technicien-hero {
+        height: 250px;
+        margin-top: 60px;
+    }
+    
+    .encore .esi_admission {
+        font-size: 28px;
+    }
+    
+    .encore h5 {
+        font-size: 15px;
+    }
+}

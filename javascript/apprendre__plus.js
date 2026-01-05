@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =============== FAQ ACCORDÉON ===============
     const faqButtons = document.querySelectorAll('.faq-question');
 
     faqButtons.forEach(button => {
@@ -8,16 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Toggle la classe active sur le bouton
             button.classList.toggle('active');
 
-            // Récupère la réponse juste après le bouton
             const answer = button.nextElementSibling;
 
-            // Toggle la classe active sur la réponse
+           
             answer.classList.toggle('active');
         });
     });
 
    
-    // Effet machine à écrire (si tu l'utilises toujours)
+    // Effet machine à écrire 
     const textElement = document.getElementById('typing-text');
     if (textElement) {
         const cursor = document.querySelector('.cursor');

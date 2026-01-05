@@ -1,23 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Animation d'entrée pour le hero
+    const heroTitle = document.querySelector('.esi_formation');
+    const heroText = document.querySelector('.comprendres');
+    
+    if (heroTitle) {
+        setTimeout(() => {
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transform = 'translateY(0)';
+        }, 300);
+    }
+    
+    if (heroText) {
+        setTimeout(() => {
+            heroText.style.opacity = '1';
+            heroText.style.transform = 'translateY(0)';
+        }, 600);
+    }
+
     // Sélectionner tous les liens du menu
     const menuLinks = document.querySelectorAll('.mes_nav a');
     
-    // Créer un mapping des IDs vers les sections correspondantes
-    const sections = {
-        '': document.querySelector('.premiere'),                    // Parcours STIC (introduction)
-        '#dts': document.querySelector('#dts'),                     // DIPLÔME DU TECHNICIEN SUPERIEUR
-        '#stic1': document.querySelector('#stic1'),                 // STIC 1 (DTS)
-        '#info-dts': document.querySelector('#info-dts'),           // INFO (DTS)
-        '#eit-dts': document.querySelector('#eit-dts'),             // EIT (DTS)
-        '#stic3-dts': document.querySelector('#stic3-dts'),         // STIC 3 (DTS)
-        '#ingenieur': document.querySelector('#ingenieur'),         // INGENIEUR STIC
-        '#stic1-ing': document.querySelector('#stic1-ing'),         // STIC 1 (INGENIEUR)
-        '#info-ing': document.querySelector('#info-ing'),           // INFO (INGENIEUR)
-        '#eit-ing': document.querySelector('#eit-ing'),             // EIT (INGENIEUR)
-        '#telecom': document.querySelector('#telecom'),             // TELECOM
-        '#stic3-ing': document.querySelector('#stic3-ing')          // STIC 3 (INGENIEUR)
-    };
-
     // Fonction pour activer le lien correspondant à la section
     function activateLink(sectionId) {
         menuLinks.forEach(link => {
@@ -66,21 +68,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Observer pour détecter la section active pendant le scroll
     window.addEventListener('scroll', function () {
+        const sections = document.querySelectorAll('.deuxiemme, .quartrieme, .premiere');
         let currentSectionId = '';
         let currentSectionDistance = Infinity;
 
-        // Parcourir toutes les sections pour trouver celle la plus proche du haut
-        Object.keys(sections).forEach(key => {
-            if (key === '') return; // Ignorer la section vide
-            
-            const section = sections[key];
-            if (section) {
+        sections.forEach(section => {
+            const id = section.id;
+            if (id) {
                 const distance = Math.abs(window.scrollY - (section.offsetTop - 150));
                 
-                // Si cette section est plus proche que la précédente
                 if (distance < currentSectionDistance && window.scrollY >= section.offsetTop - 200) {
                     currentSectionDistance = distance;
-                    currentSectionId = key;
+                    currentSectionId = '#' + id;
                 }
             }
         });
@@ -124,30 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         imageObserver.observe(img);
     });
 
-    // Machine à écrire
-    const curseur = document.querySelector(".curseur");
-    const titre = document.getElementById("comprendre");
-    const texte = "Nos formations sont conçues pour fournir aux étudiants des connaissances théoriques solides et des compétences pratiques, adaptées aux besoins du marché. Elles combinent innovation, technologie et accompagnement personnalisé pour préparer chaque étudiant à réussir dans sa carrière.";
-
-    function machine(mot, index) {
-        if (index < mot.length) {
-            setTimeout(() => {
-                titre.innerHTML += `<span>${mot[index]}</span>`;
-                machine(mot, index + 1);
-            }, 50);
-        } else {
-            curseur.classList.add("hide");
-        }
-    }
-
-    setTimeout(() => {
-        titre.innerHTML = "";
-        machine(texte, 0);
-    }, 500);
-});
-
-// Ajout d'un effet visuel pour les titres de section au scroll
-document.addEventListener('DOMContentLoaded', function() {
+    // Animation pour les titres de section au scroll
     const sectionTitles = document.querySelectorAll('.deuxiemme h2, .quartrieme h2, .premier h2');
     
     const titleObserver = new IntersectionObserver((entries) => {
@@ -170,4 +146,3 @@ document.addEventListener('DOMContentLoaded', function() {
         titleObserver.observe(title);
     });
 });
-

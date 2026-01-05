@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../stylecss/apprendre__plus.css">
     <link rel="stylesheet" href="../stylecss/admission.css">
     <link rel="stylesheet" href="../stylecss/Acceuil.css">
-    <link rel="stylesheet" href="../stylecss/responsiveacceuil.css">
     <link rel="stylesheet" href="../stylecss/Presentation.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -21,61 +20,71 @@
          <i class="fas fa-bars"></i>
         </button>
       </div>
-        <header class="ensemble">
-            <div class="header-top">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="far fa-envelope"></i>
-                        <a href="mailto:esi@inphb.edu.ci">esi@inphb.edu.ci</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+14148500417">+225 07 47 26 05 05</a>
-                    </div>
+      <header class="ensembleS">
+        <!-- Header mobile sticky -->
+        <div class="mobile-sticky-header">
+            <div class="logo-left">
+                <img src="../images/Group 3.png" alt="Logo ESI" class="mobile-logo">
+            </div>
+            <button class="mobile-burger-btn" id="mobileBurgerBtn" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    
+        <div class="header-top">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="far fa-envelope"></i>
+                    <a href="mailto:esi@inphb.edu.ci">esi@inphb.edu.ci</a>
                 </div>
-                
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/inphb.polytech" class="social-icon facebook" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://x.com/inphbpolytech" class="social-icon twitter" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                  
-                    <a href="https://ci.linkedin.com/school/inphb-officiel/" class="social-icon linkedin" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@inp-hbpageofficielle6975" class="social-icon youtube" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+14148500417">+225 07 47 26 05 05</a>
                 </div>
             </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/inphb.polytech" class="social-icon facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/inphbpolytech" class="social-icon twitter" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://ci.linkedin.com/school/inphb-officiel/" class="social-icon linkedin" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.youtube.com/@inp-hbpageofficielle6975" class="social-icon youtube" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
             </div>
-           <header class="navlien">
+        </div>
+    
+        <header class="navlien">
             <div class="lien lien1">
                 <a href="Acceuil.html">Acceuil</a>
                 <a href="Presentation.html">Presentation</a>
                 <a href="Formation.html">Formation</a>
-                <a href="Acceuil.html"><img src="../images/Group 3.png"></a>
+                <a href="Acceuil.html"><img src="../images/Group 3.png" alt="Logo ESI"></a>
                 <a href="Admission.html">Admission</a>
                 <a href="Deboucher.html">Debouché</a>      
             </div>
             <hr class="ligne1">
-           </header>
-           <section class="normal">
-            <section class="ecole"></section>
+        </header>
+        
+        <!-- Bannière hero pour Ingénieur -->
+        <section class="ingenieur-hero">
             <div class="encore">
-              <div class="hr1"></div>
-              <div class="esi_formation  esi_admission"><h1>ETUDE INGENIEUR</h1></div>
-              <div>
+                <div class="hr1"></div>
+                <h1 class="esi_admission">ETUDE INGENIEUR</h1>
                 <h5>
-                    Le cycle Ingénieur de l’ESI forme des professionnels hautement qualifiés capables de concevoir,
+                    Le cycle Ingénieur de l'ESI forme des professionnels hautement qualifiés capables de concevoir,
                     développer et piloter des solutions technologiques innovantes. <br>
                     Cette formation allie rigueur scientifique, pratique intensive et ouverture sur le monde
-                    professionnel afin de préparer les étudiants à des carrières d’ingénierie d’excellence.
+                    professionnel afin de préparer les étudiants à des carrières d'ingénierie d'excellence.
                 </h5>
             </div>
-           </section>
+        </section>
+    </header>
            <div class="together">
             <div class="high"></div>
             <div><h2>À propos du programme</h2></div>
@@ -295,7 +304,8 @@
         </div>
     </div>
 </div>
-<script src="../javascript/ACCEUIL.js"></script>     
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../javascript/ACCEUIL.js"></script>
 <script src="../javascript/apprendre__plus.js"></script>
 </body>
 </html>

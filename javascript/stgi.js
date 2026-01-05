@@ -35,10 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function (e) {
             e.preventDefault(); // Empêche le saut brutal
 
-            // Récupère l'ID de la cible (ex: href="#dts-stgi")
             const targetId = this.getAttribute('href');
             
-            // Pour le lien principal "Parcours STGI" sans ID, aller en haut
+           
             if (targetId === '#') {
                 window.scrollTo({
                     top: 0,

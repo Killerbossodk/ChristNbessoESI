@@ -1,156 +1,302 @@
-.encore{
+/* HEADER-TOP - STYLE IDENTIQUE À L'ACCUEIL */
+.header-top {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #1e2d4d;
+    color: white;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.contact-item {
     display: flex;
     align-items: center;
-    flex-direction: column;
-    background: rgb(6, 6, 105);
-    padding: 55px;
-    color: #fff;
-    gap: 20px;
+    gap: 8px;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #bb3950;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    background: white;
+    color: #1e2d4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #bb3950;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ===== HERO ADMISSION ===== */
+.admission-hero {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../images/admission-bg.jpg') center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 100px;
+    position: relative;
+}
+
+.adm-encore {
+    position: relative;
   
- 
- }
- .hr1{
- 
-     border: 2px solid #fff;
-     width: 80px;
-     margin: 0 auto;
- }
- 
- .intro-text {
-     max-width: 800px;
-     font-size: 17px;
-     line-height: 1.7;
-     margin: 0;
- }
- .rien1{
-     position: relative;
-     display: flex;
-     gap : 10px ; 
-     margin-top: 80px;
-     margin-left: 20px;
-     font-family: Georgia, 'Times New Roman', Times, serif;
-     align-items: flex-start;
- }
- h3{
-     color: crimson;
-     margin: 0;
-     font-size: 28px;
- }
- .contenue2 {
-     max-width: 900px;
-     margin: 50px auto;
-     padding:  40px 20px;
-     font-family: 'Segoe UI', Arial, sans-serif;
-     width: 65%;
- }
- 
- .etape {
-     display: flex;
-     align-items: flex-start;
-     background: white;
-     border-radius: 12px;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-     padding: 30px;
-     margin-bottom: 40px;
-     position: relative;
-     overflow: hidden;
- }
- 
- .etape:last-child {
-     margin-bottom: 0;
- }
- 
- 
- .etape::before {
-     content: attr(data-numero);
-     width: 60px;
-     height: 60px;
-     background-color: #a31f34;
-     color: white;
-     font-size: 24px;
-     font-weight: bold;
-     border-radius: 50%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-shrink: 0;
-     margin-right: 25px;
- }
- 
- .etape .texte {
-     flex: 1;
- }
- 
- .etape .etape-titre {
-     color: #a31f34;
-     font-size: 16px;
-     font-weight: 600;
-     text-transform: uppercase;
-     margin: 0 0 8px 0;
-     letter-spacing: 0.5px;
- }
- 
- .etape h4 {
-     color: #333;
-     font-size: 20px;
-     margin: 0 0 15px 0;
-     font-weight: 600;
- }
- 
+    max-width: 900px;
+}
 
- .etape p {
-     color: #666;
-     line-height: 1.7;
-     font-size: 15px;
-     margin: 0;
- }
- 
- .etape ul {
-     margin: 15px 0 0 20px;
-     color: #666;
- }
- 
- .etape ul li {
-     margin-bottom: 6px;
- }
- 
+.adm-hr1 {
+    width: 80px;
+    height: 3px;
+    background: white;
+    margin: 0 auto 25px;
+}
 
- @media (max-width: 768px) {
-     .etape {
-         flex-direction: column;
-         align-items: center;
-         text-align: center;
-         padding: 25px;
-     }
-     
-     .etape::before {
-         margin-right: 0;
-         margin-bottom: 20px;
-     }
- }
- .header-sticky {
+.esi_admission {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.adm-intro-text {
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===== CONTENU ADMISSION ===== */
+.adm-rien1 {
+    display: flex;
+    gap: 60px;
+    margin: 100px auto;
+    max-width: 1400px;
+    padding: 0 40px;
+    align-items: flex-start;
+}
+
+.adm-header-sticky {
     position: sticky;
-    top: 20px; 
-    align-self: flex-start;
-    background: transparent; 
-    max-width: 400px;
+    top: 120px;
     width: 35%;
+    max-width: 400px;
 }
 
-.etape {
-    opacity: 0;         
+.adm-header-sticky h3 {
+    font-size: 28px;
+    color: #bb3950;
+    margin-bottom: 20px;
+}
+
+.adm-contenue2 {
+    width: 65%;
+    max-width: 900px;
+}
+
+/* Étapes */
+.adm-etape {
+    display: flex;
+    align-items: flex-start;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 35px;
+    margin-bottom: 50px;
+    position: relative;
+    opacity: 0;
     transform: translateY(40px);
-    transition: all 0.8s ease-out; 
+    transition: opacity 0.8s ease, transform 0.9s ease;
 }
 
-
-.etape.visible {
+.adm-etape.visible {
     opacity: 1;
     transform: translateY(0);
 }
-.etape:nth-child(1) { transition-delay: 0.1s; }
-.etape:nth-child(2) { transition-delay: 0.2s; }
-.etape:nth-child(3) { transition-delay: 0.3s; }
-.etape:nth-child(4) { transition-delay: 0.4s; }
-.etape:nth-child(5) { transition-delay: 0.5s; }
-.etape:nth-child(6) { transition-delay: 0.6s; }
+
+.adm-etape::before {
+    content: attr(data-numero);
+    width: 60px;
+    height: 60px;
+    background: #bb3950;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 30px;
+}
+
+.adm-etape-titre {
+    color: #bb3950;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.adm-etape h4 {
+    font-size: 21px;
+    color: #333;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+.adm-etape p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.adm-etape ul {
+    margin: 15px 0 0 25px;
+    color: #555;
+}
+
+.adm-etape ul li {
+    margin-bottom: 8px;
+}
+
+.adm-separator {
+    height: 4px;
+    background: #bb3950;
+    border: none;
+    margin: 100px 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .header-top {
+        display: none !important;
+    }
+    
+    .admission-hero {
+        height: 320px;
+        margin-top: 80px;
+        padding: 25px 15px;
+    }
+    
+    .esi_admission {
+        font-size: 36px;
+    }
+    
+    .adm-intro-text {
+        font-size: 16px;
+    }
+    
+    .adm-rien1 {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 30px;
+        gap: 60px;
+    }
+
+    .adm-header-sticky {
+        position: static;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .adm-contenue2 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .admission-hero {
+        height: 300px;
+    }
+    
+    .esi_admission {
+        font-size: 32px;
+    }
+    
+    .adm-encore {
+        padding: 40px 20px;
+    }
+
+    .adm-encore h1 {
+        font-size: 36px;
+    }
+
+    .adm-etape {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 25px;
+    }
+
+    .adm-etape::before {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admission-hero {
+        height: 280px;
+        margin-top: 60px;
+    }
+    
+    .esi_admission {
+        font-size: 30px;
+    }
+    
+    .adm-intro-text {
+        font-size: 15px;
+    }
+
+    .adm-header-sticky h3 {
+        font-size: 24px;
+    }
+
+    .adm-etape {
+        padding: 35px 20px;
+    }
+
+    .adm-etape h4 {
+        font-size: 19px;
+    }
+
+    .adm-etape p {
+        font-size: 15px;
+    }
+}

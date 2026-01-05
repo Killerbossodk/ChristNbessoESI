@@ -1,45 +1,81 @@
-*{
-
-    box-sizing: border-box ; 
-    padding: 0; 
-    margin: 0 ; 
+/* ===== HERO FORMATION ===== */
+.formation-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/formation-bg.jpg') center/cover;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 80px;
+    position: relative;
+    z-index: 0;
 }
 
+.ensembles {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
 
-.normal{
+.hr1 {
+    width: 80px;
+    height: 3px;
+    background: white;
+    margin: 0 auto 25px;
+}
 
+.esi_formation {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.comprendres {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.curseur {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    margin-left: 4px;
+    background: white;
+    animation: cursor 1s step-end infinite;
+}
+
+@keyframes cursor {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ===== RESTE DU CSS EXISTANT (inchangé) ===== */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.normal {
     position: relative;
     margin-top: 80px;
 }
 
-
-.ecole{
-   background:#1b2b4a ;
-   height: 300px;
-  
-}
-.ensembles{
-    position: absolute;
-    top: 30% ;
-    left: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
-  
-}
-h5{
-    color: white;
-}
 .grides {
-
     display: flex;
-    gap: 25px
+    gap: 25px;
 }
+
 .troisiemme {
     padding: 50px 20px;
-    background-color: #f8f8f8; 
+    background-color: #f8f8f8;
     text-align: center;
 }
 
@@ -89,17 +125,16 @@ h5{
     padding: 60px 20px;
 }
 
-
 .programmes {
-    flex: 0 0 320px;                    
-    position: sticky;                   
-    top: 100px;                        
-    align-self: flex-start;             
+    flex: 0 0 320px;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
     background: #ffffff;
     padding: 40px 30px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     border-radius: 10px;
-    height: fit-content;              
+    height: fit-content;
 }
 
 .mes_nav {
@@ -121,12 +156,13 @@ h5{
 .mes_nav li:last-child {
     border-bottom: none;
 }
-h1{
-color: #fff;
-font-weight: 900;
-font-style: oblique;
 
+h1 {
+    color: #fff;
+    font-weight: 900;
+    font-style: oblique;
 }
+
 .mes_nav li a {
     text-decoration: none;
     color: inherit;
@@ -134,8 +170,8 @@ font-style: oblique;
 }
 
 .mes_nav li:hover,
-.mes_nav li a.active {                  
-    color:#bb3950;
+.mes_nav li a.active {
+    color: #bb3950;
     font-weight: 600;
 }
 
@@ -152,33 +188,21 @@ font-style: oblique;
     flex: 1;
     display: flex;
     flex-direction: column;
-                        
-}
-
-/* Barre rouge commune à toutes les sections */
-/* Conteneur principal flex - reste inchangé */
-.grides {
-    display: flex;
-    gap: 25px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 60px 20px;
 }
 
 .contenue_principale {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 50px;                 
-}
+    gap: 40px; }
 
 /* Barre rouge commune */
 .hr {
     width: 80px;
     height: 4px;
-    background-color:#bb3950;
+    background-color: #bb3950;
     border: none;
-    margin-bottom: 25px;     
+    margin-bottom: 25px;
 }
 
 /* Titres h2 */
@@ -188,7 +212,7 @@ font-style: oblique;
     font-size: 42px;
     font-weight: bold;
     color: #333;
-    margin: 0 0 30px 0;         
+    margin: 0 0 30px 0;
     line-height: 1.2;
 }
 
@@ -198,7 +222,7 @@ font-style: oblique;
     line-height: 1.8;
     color: #555;
     text-align: justify;
-    margin-bottom: 30px;       
+    margin-bottom: 30px;
 }
 
 /* Sections DTS et INGÉNIEUR */
@@ -207,33 +231,38 @@ font-style: oblique;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 800px;                
-    width: 100%;                      
+    max-width: 800px;
+    width: 100%;
 }
+
 .deuxiemme > div:not(.hr):not(.images):not(h2),
 .quartrieme > div:not(.hr):not(.images):not(h2) {
     width: 100%;
 }
+
 .images {
     text-align: center;
-    opacity: 0;                        
-    transform: scale(0.95);            
+    opacity: 0;
+    transform: scale(0.95);
     transition: opacity 0.8s ease-out, transform 0.9s ease-out;
 }
+
 .images.visible {
     opacity: 1;
-    transform: scale(1);              
+    transform: scale(1);
 }
+
 .images img {
-    max-width: 100%;                  
-    width: 100%;                      
-    height: auto;                      
+    max-width: 100%;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    object-fit: cover;                
+    object-fit: cover;
 }
+
 .btn11 {
-    margin-top: 20px;           
+    margin-top: 20px;
     padding: 14px 32px;
     background-color: #bb3950;
     color: white;
@@ -247,17 +276,17 @@ font-style: oblique;
 }
 
 .btn11:hover {
-    background-color: #bb3950;
+    background-color: #a52a40;
 }
 
 .contenue_principale hr {
     border: none;
     border-top: 1px solid #eee;
-    margin: 40px 0;            
+    margin: 40px 0;
 }
 
 .troisiemme {
-    padding: 60px 20px;         
+    padding: 60px 20px;
     background-color: #f8f8f8;
     text-align: center;
     border-radius: 12px;
@@ -265,350 +294,336 @@ font-style: oblique;
 
 .stats-container {
     justify-content: center;
-    gap: 40px;                 
+    gap: 40px;
 }
-                  
+
 .mes_nav li.active,
 .mes_nav li.active a {
-         color: #bb3950 !important;
-         font-weight: 600;
-                  }
-
+    color: #bb3950 !important;
+    font-weight: 600;
+}
 
 .comprendres {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
-                
-.curseur {
-    display: inline-block;
-    width: 3px;
-    height: 1em;
-    margin-left: 4px;
-    background: #f8f8f8;
-    animation: cursor 1s step-end;
-                }
-                
-@keyframes cursor {
-    0%   { opacity: 1; }
-    50%  { opacity: 0; }
-    100% { opacity: 0; }
-                }
-.curseur.hide {
-   display: none;
- }
 
-
-
+/* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
-    
-    .ecole {
-        height: 200px;
+    .formation-hero {
+        height: 280px;
+        margin-top: 70px;
+        padding: 20px 15px;
     }
     
-    .ensembles {
-        top: 20%;
-        left: 3%;
-        right: 3%;
-        width: 94%;
-    }
-    
-    .esi_formation h1 {
-        font-size: 24px;
+    .esi_formation {
+        font-size: 32px;
+        margin-bottom: 15px;
     }
     
     .comprendres {
-        font-size: 14px;
-        line-height: 1.6;
+        font-size: 16px;
     }
-  
+
+    .ensembles {
+        top: 25%;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+    }
+
+    .esi_formation h1 {
+        font-size: 28px;
+    }
+
+    .comprendres {
+        font-size: 15px;
+        line-height: 1.8; 
+    }
+
     .grides {
         display: block;
-        padding: 50px 25px;
+        padding: 60px 30px; 
         gap: 0;
     }
-    
+
     .programmes {
         position: static;
         width: 100%;
         flex: none;
-        margin-bottom: 50px;
-        padding: 30px 25px;
+        margin-bottom: 60px; 
+        padding: 40px 30px;
     }
-    
+
     .mes_nav li {
-        padding: 20px 0;
-        font-size: 13px;
+        padding: 25px 0; 
+        font-size: 14px;
     }
-    
+
     .mes_nav li:first-child {
-        font-size: 16px;
-        padding-bottom: 20px;
-        margin-bottom: 20px;
+        font-size: 17px;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
     }
-    
+
     .contenue_principale {
         width: 100%;
-        gap: 50px;
+        gap: 60px; 
     }
-    
+
     /* Titres */
     .premier h2,
     .deuxiemme h2,
     .quartrieme h2 {
-        font-size: 28px;
-        margin: 0 0 30px 0;
+        font-size: 32px;
+        margin: 0 0 40px 0;
+    }
+
+    /* Barre rouge */
+    .hr {
+        width: 70px;
+        height: 4px;
+        margin-bottom: 30px;
+    }
+
+    /* Paragraphes */
+    .contenue_principale p,
+    .deuxiemme > div:not(.hr):not(.images):not(h2),
+    .quartrieme > div:not(.hr):not(.images):not(h2) {
+        font-size: 17px;
+        line-height: 1.9;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    /* Sections DTS et INGÉNIEUR */
+    .deuxiemme,
+    .quartrieme {
+        gap: 45px;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    /* Première section */
+    .premiere {
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+
+    /* Images */
+    .images {
+        margin-top: 45px;
+    }
+
+    .images img {
+        max-height: 280px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .btn11 {
+        padding: 16px 40px;
+        font-size: 16px;
+        margin-top: 30px;
+    }
+
+    .troisiemme {
+        padding: 70px 30px;
+        margin: 40px 0;
+    }
+
+    .stats-container {
+        display: block;
+        gap: 0;
+    }
+
+    .stat-item {
+        margin-bottom: 50px;
+        min-width: auto;
+        padding: 20px 0;
+    }
+
+    .stat-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .stat-numbers {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+
+    .stat-label {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .highlight .stat-numbers {
+        font-size: 36px;
+    }
+
+    /* Lignes de séparation */
+    .contenue_principale hr {
+        margin: 60px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .formation-hero {
+        height: 250px;
+        margin-top: 60px;
     }
     
-    /* Barre rouge */
+    .esi_formation {
+        font-size: 28px;
+    }
+    
+    .comprendres {
+        font-size: 15px;
+    }
+
+    .ensembles {
+        top: 20%;
+        left: 4%;
+        right: 4%;
+        width: 92%;
+    }
+
+    .esi_formation h1 {
+        font-size: 24px;
+    }
+
+    .comprendres {
+        font-size: 14px;
+    }
+
+    .grides {
+        padding: 50px 25px;
+    }
+
+    .programmes {
+        padding: 35px 25px;
+        margin-bottom: 50px;
+    }
+
+    .mes_nav li {
+        padding: 22px 0;
+        font-size: 13px;
+    }
+
+    .mes_nav li:first-child {
+        font-size: 16px;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
+
+    .contenue_principale {
+        gap: 50px;
+    }
+
+    .premier h2,
+    .deuxiemme h2,
+    .quartrieme h2 {
+        font-size: 28px;
+        margin: 0 0 35px 0;
+    }
+
     .hr {
         width: 60px;
         height: 3px;
         margin-bottom: 25px;
     }
-    
-    /* Paragraphes */
+
     .contenue_principale p,
     .deuxiemme > div:not(.hr):not(.images):not(h2),
     .quartrieme > div:not(.hr):not(.images):not(h2) {
         font-size: 16px;
         line-height: 1.8;
-        margin-bottom: 30px;
-        text-align: left;
+        margin-bottom: 35px;
     }
-    
-    /* Sections DTS et INGÉNIEUR */
+
     .deuxiemme,
     .quartrieme {
-        gap: 35px;
-        max-width: 100%;
-        padding: 0 10px;
+        gap: 40px;
+        padding: 0 12px;
     }
-    
-    /* Première section */
+
     .premiere {
-        padding: 0 10px;
-        margin-bottom: 20px;
+        padding: 0 12px;
+        margin-bottom: 25px;
     }
-    
-    /* Images */
+
     .images {
-        margin-top: 35px;
+        margin-top: 40px;
     }
-    
+
     .images img {
-        max-height: 250px;
+        max-height: 220px;
         border-radius: 8px;
         margin-bottom: 15px;
     }
-    
+
     .btn11 {
-        padding: 14px 32px;
+        padding: 14px 35px;
         font-size: 15px;
-        margin-top: 20px;
+        margin-top: 25px;
+        width: 100%;
     }
-    
-    
+
     .troisiemme {
         padding: 60px 25px;
-        margin: 30px 0;
+        margin: 35px 0;
     }
-    
-    .stats-container {
-        display: block;
-        gap: 0;
-    }
-    
+
     .stat-item {
-        margin-bottom: 40px;
-        min-width: auto;
-        padding: 15px 0;
+        margin-bottom: 45px;
+        padding: 18px 0;
     }
-    
-    .stat-item:last-child {
-        margin-bottom: 0;
-    }
-    
+
     .stat-numbers {
-        font-size: 36px;
-        margin-bottom: 15px;
+        font-size: 38px;
+        margin-bottom: 18px;
     }
-    
+
     .stat-label {
         font-size: 14px;
-        line-height: 1.6;
+        line-height: 1.5;
     }
-    
+
     .highlight .stat-numbers {
         font-size: 32px;
     }
-    
-    /* Lignes de séparation */
+
     .contenue_principale hr {
         margin: 50px 0;
     }
 }
 
-@media screen and (max-width: 480px) {
-   
-    .ecole {
-        height: 180px;
-    }
-    
-    .ensembles {
-        top: 15%;
-        left: 2%;
-        right: 2%;
-        width: 96%;
-    }
-    
-    .esi_formation h1 {
-        font-size: 20px;
-    }
-    
-    .comprendres {
-        font-size: 13px;
-    }
-    
-    .grides {
-        padding: 40px 20px;
-    }
-    
-
-    .programmes {
-        padding: 25px 20px;
-        margin-bottom: 40px;
-    }
-    
-    .mes_nav li {
-        padding: 18px 0;
-        font-size: 12px;
-    }
-    
-    .mes_nav li:first-child {
-        font-size: 14px;
-        padding-bottom: 18px;
-        margin-bottom: 18px;
-    }
-    
-    /* Contenu principal */
-    .contenue_principale {
-        gap: 40px;
-    }
-    
-    /* Titres */
-    .premier h2,
-    .deuxiemme h2,
-    .quartrieme h2 {
-        font-size: 22px;
-        margin: 0 0 25px 0;
-    }
-    
-    /* Barre rouge */
-    .hr {
-        width: 50px;
-        height: 3px;
-        margin-bottom: 20px;
-    }
-    
-    /* Paragraphes */
-    .contenue_principale p,
-    .deuxiemme > div:not(.hr):not(.images):not(h2),
-    .quartrieme > div:not(.hr):not(.images):not(h2) {
-        font-size: 14px;
-        line-height: 1.7;
-        margin-bottom: 25px;
-    }
-    
-    /* Sections DTS et INGÉNIEUR */
-    .deuxiemme,
-    .quartrieme {
-        gap: 30px;
-        padding: 0 8px;
-    }
-    
-    /* Première section */
-    .premiere {
-        padding: 0 8px;
-        margin-bottom: 15px;
-    }
-    
-    /* Images */
-    .images {
-        margin-top: 30px;
-    }
-    
-    .images img {
-        max-height: 200px;
-        border-radius: 6px;
-        margin-bottom: 12px;
-    }
-    
-    .btn11 {
-        padding: 12px 28px;
-        font-size: 14px;
-        margin-top: 18px;
-        width: 100%;
-    }
-    
-    /* Stats */
-    .troisiemme {
-        padding: 50px 20px;
-        margin: 25px 0;
-    }
-    
-    .stat-item {
-        margin-bottom: 35px;
-        padding: 12px 0;
-    }
-    
-    .stat-numbers {
-        font-size: 32px;
-        margin-bottom: 12px;
-    }
-    
-    .stat-label {
-        font-size: 13px;
-        line-height: 1.5;
-    }
-    
-    .highlight .stat-numbers {
-        font-size: 28px;
-    }
-    
-    /* Lignes de séparation */
-    .contenue_principale hr {
-        margin: 40px 0;
-    }
-}
-
 @media screen and (max-width: 360px) {
-    
     .esi_formation h1 {
-        font-size: 18px;
+        font-size: 22px;
     }
-    
+
     .comprendres {
-        font-size: 12px;
+        font-size: 13px;
     }
-    
+
     .premier h2,
     .deuxiemme h2,
     .quartrieme h2 {
-        font-size: 20px;
+        font-size: 24px;
     }
-    
+
     .contenue_principale p,
     .deuxiemme > div:not(.hr):not(.images):not(h2),
     .quartrieme > div:not(.hr):not(.images):not(h2) {
-        font-size: 13px;
+        font-size: 15px;
     }
-    
+
     .stat-numbers {
-        font-size: 28px;
+        font-size: 34px;
     }
-    
+
     .stat-label {
-        font-size: 12px;
+        font-size: 13px;
     }
 }

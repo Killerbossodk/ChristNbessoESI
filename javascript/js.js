@@ -1,6 +1,4 @@
-// ====================
-// FIX POUR L'AFFICHAGE DE L'IMAGE EN RESPONSIVE
-// ====================
+
 document.addEventListener("DOMContentLoaded", () => {
     const imageDiv = document.querySelector('.autre .image');
     
@@ -11,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         imageDiv.style.opacity = '1';
     }
     
-    // Observer pour l'animation
+  
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -26,9 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// ====================
-// FIX POUR LE HEADER BLEU EN RESPONSIVE
-// ====================
 document.addEventListener("DOMContentLoaded", () => {
     const headerTop = document.querySelector('.header-top');
     
@@ -39,9 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// ====================
-// SMOOTH SCROLL POUR LES LIENS DE NAVIGATION
-// ====================
+
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.mes_nav a');
     
@@ -72,9 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ====================
-// GESTION DU MENU STICKY EN RESPONSIVE
-// ====================
 window.addEventListener('scroll', () => {
     const programmes = document.querySelector('.programmes');
     
