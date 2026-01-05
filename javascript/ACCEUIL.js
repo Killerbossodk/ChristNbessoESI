@@ -73,9 +73,10 @@ function createBurgerMenu() {
     const carteSection = document.querySelector('.carte');
 
     const links = lienMenu ? lienMenu.innerHTML : '';
-    const cartes = carteSection ? carteSection.innerHTML : '';
+    // Copie uniquement p2 et p3 (exclut p1 "Nos formations")
+    const cartes = carteSection ? Array.from(carteSection.querySelectorAll('.p2, .p3')).map(el => el.outerHTML).join('') : '';
 
-    // reconstrution de la barre mannuel
+    // Reconstruction de la barre manuelle (inchangée)
     const headerCustomHTML = `
         <div class="burger-header-custom">
             <div class="contact-info">
@@ -257,8 +258,8 @@ if (track && prevBtn && nextBtn) {
     });
     
     const checkScroll = () => {
-        prevBtn.style.display = track.scrollLeft > 0 ? 'flex' : 'none';
-        nextBtn.style.display = track.scrollLeft < (track.scrollWidth - track.clientWidth) ? 'flex' : 'none';
+        prevBtn.style.display = track.scrollLeft > 10 ? 'flex' : 'none'; // >10 pour éviter bug à 0
+        nextBtn.style.display = track.scrollLeft < (track.scrollWidth - track.clientWidth - 10) ? 'flex' : 'none';
     };
     
     track.addEventListener('scroll', checkScroll);
